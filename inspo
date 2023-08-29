@@ -1,0 +1,55 @@
+
+//creating a variable for the position of the div.
+ Then increment or decrement the value of the position as move, and use the position variable
+  to change the value of your div's left property
+var boardWidth = board.width 
+
+//Testing
+
+
+
+
+  // declarations
+  var positionX = 0
+ var points = 0
+ var speed = 10
+
+// Every 50 milliseconds, call the update Function (see below)
+setInterval(update, 50);
+			
+// Every time the box is clicked, call the handleBoxClick Function (see below)
+rectangle.on('click', handleBoxClick);
+
+// moves the Box to a new position on the screen along the X-Axis
+function moveBoxTo(newPositionX) {
+    rectangle.css("left", newPositionX);
+}
+
+/* 
+			This Function will be called 20 times/second. Each time it is called,
+			it should move the Box to a new location. If the box drifts off the screen
+			turn it around! 
+			*/
+			function update() {
+				 /* Increase positionX by 10 HERE*/
+				 positionX = positionX + speed
+				moveBoxTo(positionX)
+				if (positionX > boardWidth) {
+					speed = speed * -1
+				}
+				if (positionX < 0) {
+					speed = speed * -1
+				}
+
+			};
+
+			/* 
+			This Function will be called each time the box is clicked. Each time it is called,
+			it should increase the points total, increase the speed, and move the box to
+			the left side of the screen.
+			*/
+			function handleBoxClick() {
+				
+
+
+			};
